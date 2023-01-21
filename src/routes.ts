@@ -1,3 +1,4 @@
+import { createUser, getUserById } from './controllers/user.controller';
 import {getUserList} from '../src/controllers/user.controller';
 import { Router, request, response } from 'express';
 
@@ -14,12 +15,14 @@ routes.get('/', (request, response) => {
 routes.get('/getUser', (request, response) => {
 
     getUserList(request, response);
-    response.send({message: 'FOI'})
 })
 
 routes.post('/create', (req,res) => {
-    
-    
+    createUser(req, res);    
 })
+
+routes.get('/getById:/{id}', (req: any, res)=> {
+    getUserById(req.params.id, res);
+}) 
 
 export { routes };

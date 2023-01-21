@@ -9,6 +9,10 @@ UserModel.init({
     id: {
         type: sequelize_1.DataTypes.INTEGER,
         primaryKey: true,
+    },
+    name: {
+        type: sequelize_1.DataTypes.STRING,
+        allowNull: false
     }
-}, { tableName: "user", timestamps: false, sequelize: db_1.sequelize });
+}, { tableName: "users", timestamps: false, sequelize: db_1.sequelize });
 //# sourceMappingURL=user.js.map
