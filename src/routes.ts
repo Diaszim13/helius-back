@@ -1,3 +1,4 @@
+import { getMachineList, getInativeMachineList } from './controllers/product.controller';
 import { createUser, getUserById } from './controllers/user.controller';
 import {getUserList} from '../src/controllers/user.controller';
 import { Router, request, response } from 'express';
@@ -25,4 +26,10 @@ routes.get('/getById:/{id}', (req: any, res)=> {
     getUserById(req.params.id, res);
 }) 
 
+routes.get('/getMachines', (req,res) => {
+    getMachineList(req, res);
+})
+routes.get('/getinativemachines', (req,res) => {
+    getInativeMachineList(req, res);
+})
 export { routes };

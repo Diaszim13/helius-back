@@ -39,4 +39,3 @@ MachineModel.belongsTo(UserModel, {
     constraints: true,
     foreignKey: 'operador_id'
 })
-
