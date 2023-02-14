@@ -2,6 +2,8 @@ import UserModel from "../db/models/user";
 import { User } from "@src/interfaces/user";
 
 export const getUserList = async (req: any, res: any) => {
+    console.error(req.body)
+
     const userList = await UserModel.findAll();
 
     console.log(userList);
@@ -10,7 +12,7 @@ export const getUserList = async (req: any, res: any) => {
 }
 
 export const createUser = async (req: any,res: any) => {
-
+    console.error(req.body)
     const user = await UserModel.create(req.body);
 
     if(user) {
